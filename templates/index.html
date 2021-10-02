@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for cat, msg in messages %}
+        <div class="alert alert-{{cat}}">
+            {{msg}}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form action="/" method="POST" class="mt-4 border-bottom pb-3">
+        {{ form.hidden_tag() }}
+        {{ form.name.label(class="form-label") }}
+        {{ form.name(class="form-control") }}
+        <br>
+        {{ form.search(class="btn btn-warning") }}
+    </form>
+
+    <script>
+        $(function() {
+            $.ajax({
+                url: '{{ url_for("autocomplete") }}'
+                }).done(function (data){
+                    $("#dunker_autocomplete").autocomplete({
+                        source: data,
+                        minLength: 1
+                    });
+                });
+            });
+    </script>
+{% endblock content %}
+

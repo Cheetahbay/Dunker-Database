@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for cat, msg in messages %}
+        <div class="alert alert-{{cat}}">
+            {{msg}}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="container d-flex justify-content-center">
+    <div class="card shadow warning" style="width: 18rem;">
+        <img class="card-img-top" src="{{ dunker['Avatar'] }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ dunker['Name'] }}</h5>
+          <p class="card-text">{{ dunker['Name'] }} is a dunker located in {{ dunker['Location'] }}.</p>
+          <p class="card-text">Find out more about them below!</p>
+          <a href="{{ dunker['Instagram'] }}" class="btn btn-primary" target="_blank">Instagram</a>
+          {% if dunker['Youtube'] != "hotdog" %}
+          <a href="{{ dunker['Youtube'] }}" class="btn btn-primary" target="_blank">Youtube</a>
+          {% else %}
+    
+          {% endif %}
+    
+        </div>
+      </div>
+</div>
+
+<!-- <h1>{{ dunker['Name'] }}</h1>
+<h1>{{ dunker['League'] }}</h1>
+<h1><a href="{{ dunker['Instagram'] }}" target="_blank">Instagram</a></h1>
+
+{% if dunker["Youtube"] != "hotdog" %}
+    <h1><a href="{{ dunker['Youtube'] }}" target="_blank">Youtube</a></h1>
+{% else %}
+    <h1>No Youtube!!!</h1>    
+{% endif %} -->
+
+{% endblock content %}

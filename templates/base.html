@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body class="bg-light">
+    <div class="container">
+        {% block alerts %}
+            
+        {% endblock alerts %}
+        <h4 class="display-4 d-flex justify-content-center align-items-center">Welcome To Dunker Search</h4>
+        {% block content %}
+            
+        {% endblock content %}
+        <a href="{{ url_for('index') }}"><button class="btn btn-warning my-3">Go Back</button></a>
+    </div>
+    
+
+    <!-- <script src="/static/jquery.js"></script> -->
+    <script src="/static/bootstrap.js"></script>
+</body>
+</html>
