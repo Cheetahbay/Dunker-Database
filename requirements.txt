@@ -16,3 +16,4 @@ typing-extensions==3.10.0.2
 uvicorn==0.15.0
 Werkzeug==2.0.1
 WTForms==2.3.3
+motor==2.2.0

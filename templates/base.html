@@ -15,11 +15,14 @@
         {% block alerts %}
             
         {% endblock alerts %}
-        <h4 class="display-4 d-flex justify-content-center align-items-center">Welcome To Dunker Search</h4>
+        <div class="row">
+            <h4 class="display-4 text-center">Dunker Database</h4>
+        </div>
         {% block content %}
             
         {% endblock content %}
         <a href="{{ url_for('index') }}"><button class="btn btn-warning my-3">Go Back</button></a>
+        <button class="btn btn-warning d-flex float-right my-3"><a class="" href="/random">Random</a></button>
     </div>
     
 
